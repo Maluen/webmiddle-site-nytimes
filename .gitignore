@@ -5,6 +5,3 @@ dist
 .project
 /.settings/
 Thumbs.db
-
-search.private.json
-output
