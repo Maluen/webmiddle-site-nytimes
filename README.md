@@ -1,6 +1,6 @@
 # webmiddle-site-nytimes
 
-> The site webmiddle for [The New York Times](https://www.nytimes.com)
+> The site [webmiddle](https://github.com/webmiddle/webmiddle) for [The New York Times](https://www.nytimes.com)
 
 ## Install
 
@@ -55,10 +55,16 @@ pageNumber  | 0
 
 Scrapes the HTML page of the article with the given url.
 
+**Properties**:
+
 Name        | Example
 ------------|-------------------------------------
 url         | "http://www.nytimes.com/2016/12/29/science/pan-starrs-telescope-survey-map.html"
 
+**Output**: JSON resource
+
 ## Settings
 
-- resultsPerPage
+Name           | Description
+---------------|--------------------------------------------------
+resultsPerPage | Number of articles in each "search articles" page
