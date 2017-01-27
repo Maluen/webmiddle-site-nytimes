@@ -37,7 +37,7 @@ webmiddle.evaluate((
 
 ### SearchArticles
 
-Uses the [Article Search API](https://developer.nytimes.com/article_search_v2.json). 
+It is just a wrapper of the [Article Search API](https://developer.nytimes.com/article_search_v2.json). 
 
 **Properties**:
 
@@ -49,19 +49,32 @@ startYear   | 2007
 endYear     | 2010
 pageNumber  | 0
 
-**Output**: JSON resource
+**Output**: JSON resource as in the API.
 
 ### ArticleDetails
 
-Scrapes the HTML page of the article with the given url.
+Scrapes the HTML page of the article with the given url.  
+The output includes the full article text.
 
 **Properties**:
 
 Name        | Example
 ------------|-------------------------------------
-url         | "http://www.nytimes.com/2016/12/29/science/pan-starrs-telescope-survey-map.html"
+url         | "http://www.nytimes.com/2012/10/11/business/smallbusiness/small-companies-seek-to-push-sales-and-marketing-with-own-apps.html"
 
 **Output**: JSON resource
+
+```json
+{
+    "url": "http://www.nytimes.com/2012/10/11/business/smallbusiness/small-companies-seek-to-push-sales-and-marketing-with-own-apps.html",
+    "title": "Even Small Players Can Seize the Day With an App Strategy",
+    "description": "Consumers now expect nearly every brand to have its own app, and small businesses feel pressured to create and publish them.",
+    "date": "Aug 3, 2014",
+    "image": "http://www.nytimes.com/images/2012/10/11/business/11sbiz/11sbiz-thumbStandard.jpg",
+    "category": "Small Business",
+    "text": "In the summer of 2010, Sheri Gurock, co-founder of Magic Beans, a retailer specializing in toys and baby gear, decided..."
+  }
+```
 
 ## Settings
 
