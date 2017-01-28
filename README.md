@@ -41,13 +41,13 @@ It is just a wrapper of the [Article Search API](https://developer.nytimes.com/a
 
 **Properties**:
 
-Name        | Example
-------------|-------------------------------------
-query       | "javascript"
-apiKey      | "e735b3bce42631a54e3221bb135ca262"
-startYear   | 2007
-endYear     | 2010
-pageNumber  | 0
+Name                   | Example
+-----------------------|-------------------------------------
+query                  | "javascript"
+apiKey                 | "e735b3bce42631a54e3221bb135ca262"
+startYear (optional)   | 2007
+endYear (optional)     | 2010
+pageNumber             | 0
 
 **Output**: JSON resource as in the API.
 
