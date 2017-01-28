@@ -31,7 +31,7 @@
     ],
     "babel": "inherit"
   },
-  "author": "Manuel Dell&#39;Elce",
+  "author": "Manuel Dell'Elce",
   "license": "MIT",
   "dependencies": {
     "webmiddle": "*",
