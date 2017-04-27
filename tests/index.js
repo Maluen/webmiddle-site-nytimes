@@ -11,7 +11,7 @@ test.beforeEach(t => {
 test('SearchArticles', async t => {
   const SearchArticles = NyTimes.service('SearchArticles');
 
-  await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
+  const resource = await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
     <SearchArticles
       name="searchArticles"
       query="science"
@@ -20,14 +20,20 @@ test('SearchArticles', async t => {
       apiKey={apiKey}
     />
   ));
+
+  t.is(resource.contentType, 'application/json');
+  t.is(typeof resource.content.root, 'object');
 });
 
 test('ArticleDetails', async t => {
   const ArticleDetails = NyTimes.service('ArticleDetails');
 
-  await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
+  const resource = await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
     <ArticleDetails
       url="http://www.nytimes.com/2016/12/29/science/pan-starrs-telescope-survey-map.html"
     />
   ));
+
+  t.is(resource.contentType, 'application/json');
+  t.is(typeof resource.content.root, 'object');
 });
