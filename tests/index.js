@@ -1,17 +1,18 @@
 import test from 'ava';
-import NyTimes from '../src/index.js';
+import { services } from '../src/index.js';
 import WebMiddle, { evaluate, createContext } from 'webmiddle';
 
 const apiKey = process.env.NYTIMES_API_KEY;
 
 test.beforeEach(t => {
-  t.context.webmiddle = new WebMiddle();
+  const webmiddle = new WebMiddle();
+  t.context.context = createContext(webmiddle);
 });
 
 test('SearchArticles', async t => {
-  const SearchArticles = NyTimes.service('SearchArticles');
+  const { SearchArticles } = services;
 
-  const resource = await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
+  const resource = await evaluate(createContext(t.context.context, { expectResource: true }), (
     <SearchArticles
       name="searchArticles"
       query="science"
@@ -26,9 +27,9 @@ test('SearchArticles', async t => {
 });
 
 test('ArticleDetails', async t => {
-  const ArticleDetails = NyTimes.service('ArticleDetails');
+  const { ArticleDetails } = services;
 
-  const resource = await evaluate(createContext(t.context.webmiddle, { expectResource: true }), (
+  const resource = await evaluate(createContext(t.context.context, { expectResource: true }), (
     <ArticleDetails
       url="http://www.nytimes.com/2016/12/29/science/pan-starrs-telescope-survey-map.html"
     />
