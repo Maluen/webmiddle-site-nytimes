@@ -11,13 +11,12 @@ npm install --save webmiddle-site-nytimes
 ## Usage
 
 ```jsx
-import WebMiddle, { evaluate, createContext } from 'webmiddle';
+import webmiddle, { evaluate, createContext } from 'webmiddle';
 import NyTimes from 'webmiddle-site-nytimes';
 const apiKey = process.env.NYTIMES_API_KEY;
 const { SearchArticles } = NyTimes.services;
 
-const webmiddle = new WebMiddle();
-evaluate(createContext(webmiddle, { expectResource: true }), (
+evaluate(createContext({ expectResource: true }), (
   <SearchArticles
     name="searchArticles"
     query="science"
