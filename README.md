@@ -11,7 +11,7 @@ npm install --save webmiddle-site-nytimes
 ## Usage
 
 ```jsx
-import webmiddle, { evaluate, createContext } from 'webmiddle';
+import { evaluate, createContext } from 'webmiddle';
 import NyTimes from 'webmiddle-site-nytimes';
 const apiKey = process.env.NYTIMES_API_KEY;
 const { SearchArticles } = NyTimes.services;

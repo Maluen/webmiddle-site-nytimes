@@ -1,6 +1,6 @@
 import test from 'ava';
 import { services } from '../src/index.js';
-import webmiddle, { evaluate, createContext } from 'webmiddle';
+import { evaluate, createContext } from 'webmiddle';
 
 const apiKey = process.env.NYTIMES_API_KEY;
 
