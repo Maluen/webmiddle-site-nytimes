@@ -1,17 +1,15 @@
 import test from 'ava';
 import { services } from '../src/index.js';
-import { evaluate, createContext } from 'webmiddle';
+import { rootContext } from 'webmiddle';
 
 const apiKey = process.env.NYTIMES_API_KEY;
-
-test.beforeEach(t => {
-  t.context.context = createContext();
-});
 
 test('SearchArticles', async t => {
   const { SearchArticles } = services;
 
-  const resource = await evaluate(createContext(t.context.context, { expectResource: true }), (
+  const resource = await rootContext.extend({
+    expectResource: true
+  }).evaluate(
     <SearchArticles
       name="searchArticles"
       query="science"
@@ -19,7 +17,7 @@ test('SearchArticles', async t => {
       startYear={2007}
       apiKey={apiKey}
     />
-  ));
+  );
 
   t.is(resource.contentType, 'application/json');
   t.is(typeof resource.content.root, 'object');
@@ -28,11 +26,13 @@ test('SearchArticles', async t => {
 test('ArticleDetails', async t => {
   const { ArticleDetails } = services;
 
-  const resource = await evaluate(createContext(t.context.context, { expectResource: true }), (
+  const resource = await rootContext.extend({
+    expectResource: true
+  }).evaluate(
     <ArticleDetails
       url="http://www.nytimes.com/2016/12/29/science/pan-starrs-telescope-survey-map.html"
     />
-  ));
+  );
 
   t.is(resource.contentType, 'application/json');
   t.is(typeof resource.content.root, 'object');
