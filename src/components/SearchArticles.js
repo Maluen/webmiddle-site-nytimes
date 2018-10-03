@@ -1,9 +1,9 @@
 import { PropTypes } from 'webmiddle';
-import Pipe from 'webmiddle-service-pipe';
-import HttpRequest from 'webmiddle-service-http-request';
-import JSONSelectToJson from 'webmiddle-service-jsonselect-to-json';
+import Pipe from 'webmiddle-component-pipe';
+import HttpRequest from 'webmiddle-component-http-request';
+import JSONSelectToJson from 'webmiddle-component-jsonselect-to-json';
 
-// service specific
+// component specific
 // format: YYYYMMDD
 function formatYear(year) {
   return `${year}0101`;

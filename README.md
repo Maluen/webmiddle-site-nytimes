@@ -14,7 +14,7 @@ npm install --save webmiddle-site-nytimes
 import { rootContext } from 'webmiddle';
 import NyTimes from 'webmiddle-site-nytimes';
 const apiKey = process.env.NYTIMES_API_KEY;
-const { SearchArticles } = NyTimes.services;
+const { SearchArticles } = NyTimes.components;
 
 rootContext.extend({
   expectResource: true
@@ -31,7 +31,7 @@ rootContext.extend({
 });
 ```
 
-## Services
+## Components
 
 ### SearchArticles
 
