@@ -1,6 +1,8 @@
 import test from 'ava';
-import { components } from '../src/index.js';
+import nytimes from '../src/index.js';
 import { rootContext, isResource } from 'webmiddle';
+
+const { components } = nytimes;
 
 const apiKey = process.env.NYTIMES_API_KEY;
 
