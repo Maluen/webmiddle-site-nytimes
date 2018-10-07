@@ -2,6 +2,8 @@
 
 > The site [webmiddle](https://github.com/webmiddle/webmiddle) for [The New York Times](https://www.nytimes.com)
 
+## NOTE: THIS PROJECT IS DEPRECATED AS IS NOT SUPPORTED ANYMORE.
+
 ## Install
 
 ```bash
